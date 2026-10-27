@@ -1,5 +1,6 @@
 # Faculty Defense & Presentation Guide
 ## AI465 Agentic AI Research Project
+**Author / Presenter:** Ashish Vishwakarma
 
 This guide provides speaking points, slide outlines, mathematical definitions, and likely faculty questions for defending your research project:
 **"Joint Input Robustness of Budget-Constrained Tool Calling"**.

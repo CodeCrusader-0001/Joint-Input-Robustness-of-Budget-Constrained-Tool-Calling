@@ -2,7 +2,7 @@
 
 **Project Title:** Joint Input Robustness of Budget-Constrained Tool Calling  
 **Course:** AI465 Agentic AI Research Project  
-**Author / Investigator:** Ashish Kumar  
+**Author / Investigator:** Ashish Vishwakarma  
 **Primary Reference:** *On the Robustness of Agentic Function Calling* — Ella Rabinovich and Ateret Anaby-Tavor, TrustNLP 2025  
 
 ---
