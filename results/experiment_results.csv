@@ -1,0 +1,4 @@
+Condition,Evaluable_Tasks,Successful_Calls,Tool_Selection_Accuracy,Exact_Call_Accuracy,Mean_Input_Tokens,Median_Input_Tokens,Mean_Latency_Sec,Top3_Recall
+Condition_A,30,30,100.0,93.33,2080.0,2079.0,7.03,N/A
+Condition_B,30,30,100.0,90.0,2082.2,2083.0,6.03,N/A
+Condition_C,30,30,100.0,96.67,281.8,275.5,9.09,100.0

@@ -1,0 +1,35 @@
+# Environment files containing sensitive keys
+.env
+*.env
+.env.local
+
+# Python cache & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# API request caches
+results/cache/
+results_historical_tfidf_backup/cache/
+cache/
+
+# Jupyter checkpoint files
+.ipynb_checkpoints/
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS specific
+Thumbs.db
+.DS_Store
+
+# Temporary scratch outputs
+*.tmp
+*.log

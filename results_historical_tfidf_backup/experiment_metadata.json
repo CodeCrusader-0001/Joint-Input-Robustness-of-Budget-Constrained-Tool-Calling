@@ -1,0 +1,12 @@
+{
+  "timestamp_start": "2026-10-27T18:29:15.828425",
+  "timestamp_end": "2026-10-27T19:58:09.821846",
+  "random_seed": 42,
+  "model_name": "gemini-flash-lite-latest",
+  "api_key_masked": "AQ.A...7AGQ",
+  "total_candidate_tools": 20,
+  "total_target_tools": 10,
+  "total_distractor_tools": 10,
+  "shortlist_method": "tfidf_top3",
+  "is_real_api_run": true
+}

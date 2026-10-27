@@ -1,0 +1,13 @@
+{
+  "timestamp_start": "2026-10-27T21:26:44.041624",
+  "timestamp_end": "2026-10-27T21:26:44.118077",
+  "random_seed": 42,
+  "model_name": "gemini-3.5-flash",
+  "api_key_masked": "AQ.A...7AGQ",
+  "total_candidate_tools": 24,
+  "total_target_tools": 12,
+  "total_distractor_tools": 12,
+  "shortlist_method": "sentence_transformers",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "is_real_api_run": true
+}

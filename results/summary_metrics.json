@@ -1,0 +1,106 @@
+{
+  "experiment_title": "Joint Input Robustness of Budget-Constrained Tool Calling",
+  "model_evaluated": "gemini-3.5-flash",
+  "total_tasks_evaluated": 5,
+  "is_dry_run": false,
+  "condition_metrics": {
+    "Condition_A_Original_Full": {
+      "evaluable_tasks": 30,
+      "successful_api_calls": 30,
+      "api_success_rate": 1.0,
+      "tool_selection_accuracy": 1.0,
+      "argument_accuracy": 0.9333,
+      "exact_call_accuracy": 0.9333,
+      "mean_input_tokens": 2079.97,
+      "median_input_tokens": 2079.0,
+      "mean_latency_seconds": 7.029,
+      "median_latency_seconds": 4.568
+    },
+    "Condition_B_Paraphrased_Full": {
+      "evaluable_tasks": 30,
+      "successful_api_calls": 30,
+      "api_success_rate": 1.0,
+      "tool_selection_accuracy": 1.0,
+      "argument_accuracy": 0.9,
+      "exact_call_accuracy": 0.9,
+      "mean_input_tokens": 2082.23,
+      "median_input_tokens": 2083.0,
+      "mean_latency_seconds": 6.026,
+      "median_latency_seconds": 3.768
+    },
+    "Condition_C_Paraphrased_Shortlist": {
+      "evaluable_tasks": 30,
+      "successful_api_calls": 30,
+      "api_success_rate": 1.0,
+      "tool_selection_accuracy": 1.0,
+      "argument_accuracy": 0.9667,
+      "exact_call_accuracy": 0.9667,
+      "mean_input_tokens": 281.8,
+      "median_input_tokens": 275.5,
+      "mean_latency_seconds": 9.095,
+      "median_latency_seconds": 5.462
+    }
+  },
+  "shortlist_recall_top3": 1.0,
+  "token_savings_condition_c_vs_b_pct": 86.47,
+  "paired_statistical_comparisons": {
+    "Condition_A_vs_Condition_B": {
+      "comparison": "Condition_A vs Condition_B",
+      "n_paired": 30,
+      "cond1_mean": 0.9333,
+      "cond2_mean": 0.9,
+      "mean_difference": 0.0333,
+      "bootstrap_ci_95": [
+        0.0,
+        0.1
+      ],
+      "discordant_pairs": {
+        "cond1_only": 1,
+        "cond2_only": 0
+      },
+      "mcnemar_p_value": 1.0,
+      "statistically_significant_at_05": false
+    },
+    "Condition_B_vs_Condition_C": {
+      "comparison": "Condition_B vs Condition_C",
+      "n_paired": 30,
+      "cond1_mean": 0.9,
+      "cond2_mean": 0.9667,
+      "mean_difference": -0.0667,
+      "bootstrap_ci_95": [
+        -0.1667,
+        0.0
+      ],
+      "discordant_pairs": {
+        "cond1_only": 0,
+        "cond2_only": 2
+      },
+      "mcnemar_p_value": 0.5,
+      "statistically_significant_at_05": false
+    },
+    "Condition_A_vs_Condition_C": {
+      "comparison": "Condition_A vs Condition_C",
+      "n_paired": 30,
+      "cond1_mean": 0.9333,
+      "cond2_mean": 0.9667,
+      "mean_difference": -0.0333,
+      "bootstrap_ci_95": [
+        -0.1,
+        0.0
+      ],
+      "discordant_pairs": {
+        "cond1_only": 0,
+        "cond2_only": 1
+      },
+      "mcnemar_p_value": 1.0,
+      "statistically_significant_at_05": false
+    }
+  },
+  "paraphrase_lexical_metrics": {
+    "mean_jaccard_similarity": 0.3122,
+    "mean_lexical_distance": 0.6878,
+    "mean_character_length_diff": 23.4,
+    "total_paired_tasks": 5
+  },
+  "total_evaluations_recorded": 90
+}

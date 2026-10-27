@@ -1,0 +1,432 @@
+[
+  {
+    "name": "search_documents",
+    "description": "Search corporate knowledge base and document repository using a general full-text search query string.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "query": {
+          "type": "STRING",
+          "description": "The general search query string to look for in document body content."
+        }
+      },
+      "required": ["query"]
+    },
+    "is_distractor": false,
+    "domain": "documents"
+  },
+  {
+    "name": "search_document_by_title",
+    "description": "Find and locate documents matching an exact or partial document headline or file title.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "title": {
+          "type": "STRING",
+          "description": "The specific title or headline of the document to search for."
+        }
+      },
+      "required": ["title"]
+    },
+    "is_distractor": true,
+    "target_counterpart": "search_documents",
+    "domain": "documents"
+  },
+  {
+    "name": "search_document_by_keyword",
+    "description": "Filter and retrieve documents tagged with a specific standardized taxonomy metadata keyword or tag.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "keyword": {
+          "type": "STRING",
+          "description": "The exact metadata tag or category keyword attached to documents."
+        }
+      },
+      "required": ["keyword"]
+    },
+    "is_distractor": true,
+    "target_counterpart": "search_documents",
+    "domain": "documents"
+  },
+  {
+    "name": "search_products",
+    "description": "Search e-commerce product catalog for items matching a general text description or search query.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "query": {
+          "type": "STRING",
+          "description": "Keywords or search term describing the products."
+        }
+      },
+      "required": ["query"]
+    },
+    "is_distractor": false,
+    "domain": "e-commerce"
+  },
+  {
+    "name": "search_products_by_category",
+    "description": "Browse and list all retail products belonging to a specific department or store category.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "category": {
+          "type": "STRING",
+          "description": "Department or category name, e.g. electronics, footwear, books."
+        }
+      },
+      "required": ["category"]
+    },
+    "is_distractor": true,
+    "target_counterpart": "search_products",
+    "domain": "e-commerce"
+  },
+  {
+    "name": "find_product_by_name",
+    "description": "Look up an exact retail item or merchandise by its specific commercial brand name or model label.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "product_name": {
+          "type": "STRING",
+          "description": "The specific commercial product name or exact brand model name."
+        }
+      },
+      "required": ["product_name"]
+    },
+    "is_distractor": true,
+    "target_counterpart": "search_products",
+    "domain": "e-commerce"
+  },
+  {
+    "name": "search_customers",
+    "description": "Search customer directory database by general customer query string, matching name, email, or company.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "query": {
+          "type": "STRING",
+          "description": "Search phrase to look up in customer records."
+        }
+      },
+      "required": ["query"]
+    },
+    "is_distractor": false,
+    "domain": "crm"
+  },
+  {
+    "name": "get_customer_profile",
+    "description": "Retrieve comprehensive contact profile, registration information, and account status for a specific customer ID.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "customer_id": {
+          "type": "STRING",
+          "description": "The unique customer account identifier, e.g. CUST-10492."
+        }
+      },
+      "required": ["customer_id"]
+    },
+    "is_distractor": true,
+    "target_counterpart": "search_customers",
+    "domain": "crm"
+  },
+  {
+    "name": "search_orders",
+    "description": "Search order database records across multiple orders matching a general keyword or search term.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "query": {
+          "type": "STRING",
+          "description": "Search keywords matching order items, notes, or customer descriptions."
+        }
+      },
+      "required": ["query"]
+    },
+    "is_distractor": false,
+    "domain": "orders"
+  },
+  {
+    "name": "get_order_status",
+    "description": "Retrieve the current delivery, fulfillment, or shipping progress status for a specific order ID.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "order_id": {
+          "type": "STRING",
+          "description": "The unique order identifier code, e.g. ORD-98124."
+        }
+      },
+      "required": ["order_id"]
+    },
+    "is_distractor": false,
+    "domain": "orders"
+  },
+  {
+    "name": "get_order_details",
+    "description": "Retrieve the complete itemized billing invoice, purchased item list, pricing breakdown, and payment details for a specific order ID.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "order_id": {
+          "type": "STRING",
+          "description": "The unique purchase order code, e.g. ORD-98124."
+        }
+      },
+      "required": ["order_id"]
+    },
+    "is_distractor": true,
+    "target_counterpart": "get_order_status",
+    "domain": "orders"
+  },
+  {
+    "name": "get_weather",
+    "description": "Retrieve current real-time atmospheric weather conditions, temperature, and humidity for a specified city.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "city": {
+          "type": "STRING",
+          "description": "The city or municipality name, e.g. London or Chicago."
+        },
+        "units": {
+          "type": "STRING",
+          "description": "Measurement units for temperature: celsius or fahrenheit.",
+          "enum": ["celsius", "fahrenheit"]
+        }
+      },
+      "required": ["city"]
+    },
+    "is_distractor": false,
+    "domain": "weather"
+  },
+  {
+    "name": "get_forecast",
+    "description": "Retrieve multi-day future weather projections, meteorological forecasts, and rain probabilities for upcoming days.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "location": {
+          "type": "STRING",
+          "description": "City or destination location name."
+        },
+        "days": {
+          "type": "INTEGER",
+          "description": "Number of future days to forecast (1 to 14)."
+        }
+      },
+      "required": ["location"]
+    },
+    "is_distractor": true,
+    "target_counterpart": "get_weather",
+    "domain": "weather"
+  },
+  {
+    "name": "search_restaurants",
+    "description": "Discover and find dining restaurants matching a preferred culinary cuisine type and city/location.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "cuisine": {
+          "type": "STRING",
+          "description": "Type of culinary food, e.g. Italian, Thai, Mexican, Japanese."
+        },
+        "location": {
+          "type": "STRING",
+          "description": "City or neighborhood location to search."
+        }
+      },
+      "required": ["cuisine", "location"]
+    },
+    "is_distractor": false,
+    "domain": "dining"
+  },
+  {
+    "name": "find_restaurants_nearby",
+    "description": "Search for eating places and restaurants located in close physical proximity to a specific landmark or address.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "location": {
+          "type": "STRING",
+          "description": "Reference street address or geographic landmark."
+        }
+      },
+      "required": ["location"]
+    },
+    "is_distractor": true,
+    "target_counterpart": "search_restaurants",
+    "domain": "dining"
+  },
+  {
+    "name": "calculate",
+    "description": "Safely evaluate mathematical expressions and compute numerical arithmetic calculations.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "expression": {
+          "type": "STRING",
+          "description": "Mathematical formula to compute, e.g. '150 * 1.18 + 25'."
+        }
+      },
+      "required": ["expression"]
+    },
+    "is_distractor": false,
+    "domain": "math"
+  },
+  {
+    "name": "convert_currency",
+    "description": "Convert a specific monetary amount from a source currency into a target foreign currency using current exchange rates.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "amount": {
+          "type": "NUMBER",
+          "description": "The numerical amount of money to convert."
+        },
+        "from_currency": {
+          "type": "STRING",
+          "description": "Three-letter ISO currency code to convert from, e.g. USD, EUR, GBP."
+        },
+        "to_currency": {
+          "type": "STRING",
+          "description": "Three-letter ISO currency code to convert into, e.g. JPY, EUR, INR."
+        }
+      },
+      "required": ["amount", "from_currency", "to_currency"]
+    },
+    "is_distractor": false,
+    "domain": "finance"
+  },
+  {
+    "name": "search_web",
+    "description": "Perform an open web search across internet websites and public online resources for a general query.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "query": {
+          "type": "STRING",
+          "description": "General search query for web search."
+        }
+      },
+      "required": ["query"]
+    },
+    "is_distractor": false,
+    "domain": "web"
+  },
+  {
+    "name": "search_news",
+    "description": "Search recent journalistic articles, published headlines, and current news coverage by topic.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "query": {
+          "type": "STRING",
+          "description": "The news topic or headline subject to search."
+        }
+      },
+      "required": ["query"]
+    },
+    "is_distractor": true,
+    "target_counterpart": "search_web",
+    "domain": "web"
+  },
+  {
+    "name": "get_calendar_events",
+    "description": "Retrieve user calendar schedule, meetings, and calendar events planned for a specific date.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "date": {
+          "type": "STRING",
+          "description": "The calendar date in YYYY-MM-DD format, e.g. 2026-11-15."
+        }
+      },
+      "required": ["date"]
+    },
+    "is_distractor": false,
+    "domain": "calendar"
+  },
+  {
+    "name": "schedule_meeting",
+    "description": "Schedule and create a new event or appointment on the user calendar with a title, time, and attendees.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "title": {
+          "type": "STRING",
+          "description": "Title or subject of the meeting."
+        },
+        "start_time": {
+          "type": "STRING",
+          "description": "Start timestamp in ISO or descriptive format, e.g. 2026-11-15 14:00."
+        },
+        "attendees": {
+          "type": "ARRAY",
+          "description": "List of participant email addresses.",
+          "items": { "type": "STRING" }
+        }
+      },
+      "required": ["title", "start_time"]
+    },
+    "is_distractor": true,
+    "target_counterpart": "get_calendar_events",
+    "domain": "calendar"
+  },
+  {
+    "name": "calculate_shipping",
+    "description": "Calculate estimated parcel shipping fee and freight costs based on package weight and transit distance.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "weight": {
+          "type": "NUMBER",
+          "description": "Package weight in kilograms or pounds."
+        },
+        "distance": {
+          "type": "NUMBER",
+          "description": "Shipping distance in miles or kilometers."
+        }
+      },
+      "required": ["weight", "distance"]
+    },
+    "is_distractor": false,
+    "domain": "logistics"
+  },
+  {
+    "name": "track_shipment",
+    "description": "Track real-time carrier delivery progress, transit scans, and delivery ETA for a package using its tracking number.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "tracking_number": {
+          "type": "STRING",
+          "description": "The courier carrier tracking identifier code, e.g. TRK-482910."
+        }
+      },
+      "required": ["tracking_number"]
+    },
+    "is_distractor": true,
+    "target_counterpart": "calculate_shipping",
+    "domain": "logistics"
+  },
+  {
+    "name": "check_inventory",
+    "description": "Check real-time warehouse inventory stock levels and unit availability count for a specific item SKU or product ID.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "product_id": {
+          "type": "STRING",
+          "description": "The unique product SKU or catalog ID, e.g. SKU-8842."
+        }
+      },
+      "required": ["product_id"]
+    },
+    "is_distractor": true,
+    "target_counterpart": "search_products",
+    "domain": "e-commerce"
+  }
+]
